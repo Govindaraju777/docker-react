@@ -1,5 +1,5 @@
 sudo: required
-services:
+serDocker-env.eba-6h5gqizh.ap-south-1.elasticbeanstalk.comvices:
  - docker
  
 before_install:
@@ -8,3 +8,17 @@ before_install:
  
 script:
  - docker run -e CI=true govindaraju/docker-react npm run test
+ 
+deploy:
+ provider: elasticbeanstalk
+ region: "ap-south-1"
+ app: "docker"
+ env: "Docker-env"
+ bucket_name: "elasticbeanstalk-ap-south-1-363956362042"
+ bucker_path: "docker"
+ on: 
+  branch: master 
+ access_key_id: "$AWS_ACCESS_KEY"
+ secret_access_key: 
+  secure: "$AWS_SECRET_KEY"
+
