@@ -3,7 +3,7 @@ serDocker-env.eba-6h5gqizh.ap-south-1.elasticbeanstalk.comvices:
  - docker
  
 before_install:
- - docker build -t govindaraju/docker-react -f Dockerfile .
+ - docker build -t govindaraju/docker-react -f Dockerfile.dev .
  
  
 script:
@@ -19,5 +19,5 @@ deploy:
  on: 
   branch: master 
  access_key_id: $AWS_ACCESS_KEY
- secret_access_key: $AWS_SECRET_KEY
+ secret_access_key: $AWS_SECRET_KEY"
 
